@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"> <!--- setting the Unicode charset--->
+		<title>MMU Video</title> <!--- setting the title of the tab to MMU video--->
+		<script src="scripts/videoScript.js"></script> <!--- the script is in an external Javascript file--->
+	</head>
+
+	<body>
+		<header>
+			<h1>Nikol Stoyanova, 17069455, 15 Dec 2017</h1> <!---heading of the page--->
+		</header>
+		
+		<section id="videoContainer">
+			<video width=640 height=360 poster="images/poster.jpg"><!--- using video element; setting the width and the height of the container of the video; setting a poster image at the beginning of the video --->
+				<source src="video/mp4/MMU.mp4" type="video/mp4"> <!---specifying the source of the video and its format--->
+				<source src="video/webm/MMU.webm" type="video/webm"><!---specifying the source of the video and its format--->
+			</video>
+			
+			<div id="videoControls"> <!---opening div tag (container) for controls of video--->
+				<button type="button" id="playPause">Play</button> <!---creating a play button--->
+				<button type="button" id="muteUnmute">Mute</button><!---creating a Mute button--->
+				<button type="button" id="stopRewind">Stop</button><!---creating a Stop button--->
+				<input type="range" id="seekBar" min=0 max=100 step=1 value=0><!--creating a Seek bar; min max and step values are the same by default;setting the initial value to 0-->
+				<input type="range" id="volumeSlider" min=0 max=10 step=1 value=10><!---creating a Volume slider; min value of the volume is 0 and the max one is 10 - they are not the same by default; setting the initial value to max=10--->
+				<input type="text" readonly id="durationField" size="4"/><!---creating a blank field showing the duration; the user can't type in it --->
+				<input type="text" readonly id="playbackField" size="4"/><!---creating a blank filed showing the playback time of the video; the user can't type in it--->
+				
+				<select id="speedChanger"><!---opening tag for a list of options which change the playback rate of the video--->
+					<option value="2">2x</option>
+					<option value="1.75">1.75x</option>
+					<option value="1.25">1.25x</option>
+					<option selected value="1">1x</option>
+					<option value="0.75">0.75x</option>
+					<option value="0.5">0.5x</option>
+				</select><!---closing tag of the list--->
+				
+				<button type="button" id="fastForward">FF</button><!---creating a fast forward button--->
+			</div><!---closing div tag (container) of the video controls--->
+		</section>
+	</body>
+</html>
